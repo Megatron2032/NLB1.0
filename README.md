@@ -1,4 +1,4 @@
-##NeuronLayerBox <br>
+# NeuronLayerBox <br>
 Computational Neuroscience platform with cuda.<br>
 This platform is mainly for calculating stephen grossberg's model.<br>
 1.How to run:<br>
