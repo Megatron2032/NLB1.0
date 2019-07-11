@@ -1,0 +1,145 @@
+  j=-1;
+  int num_flag=0;
+  for(i=0;i<Nlines;i++)
+  {
+    if(Layer1[i]==1)
+    {
+      for(j=num_flag;j<num_flag+Layer2[i]*Layer3[i];j++)
+      {
+       N_para[j].neuron_numble=j;
+       N_para[j].u=-20;
+       N_para[j].v=-60;
+       Signal[j]=0;
+       N_para[j].type=1;
+       N_para[j].layer=i;
+       N_para[j].x=(j-num_flag)/Layer3[i];
+       N_para[j].y=(j-num_flag)%Layer3[i]-1;
+      }
+      num_flag=j;
+    }
+  }
+ printf("num_flag=%d\n",num_flag);
+ if(num_flag>N[0])
+ {
+   printf("N1 error\n");
+   return -1;
+ }
+ N[0]=num_flag-1;
+for(l=0;l<6;l++)
+{
+  for(i=0;i<Nlines;i++)
+  {
+    if(Layer1[i]==2)
+    {
+      for(j=num_flag;j<num_flag+Layer2[i]*Layer3[i];j++)
+      {
+       N_para[j].neuron_numble=j;
+       N_para[j].u=-20;
+       N_para[j].v=-60;
+       Signal[j]=0;
+       N_para[j].type=l;
+       N_para[j].layer=i;
+       N_para[j].x=(j-num_flag)/Layer3[i];
+       N_para[j].y=(j-num_flag)%Layer3[i]-1;
+      }
+      num_flag=j;
+    }
+  }
+  printf("num_flag=%d\n",num_flag);
+ if(num_flag>N[l])
+ {printf("N%d error\n",l);return -1;}
+ N[l]=num_flag-1;
+}
+
+
+for(i=0;i<Nlines;i++)
+{
+  if(Layer1[i]==3)
+  {
+    for(j=num_flag;j<num_flag+Layer2[i]*Layer3[i];j++)
+    {
+     N_para[j].neuron_numble=j;
+     N_para[j].u=-20;
+     N_para[j].v=-60;
+     Signal[j]=0;
+     N_para[j].type=3;
+     N_para[j].layer=i;
+     N_para[j].x=(j-num_flag)/Layer3[i];
+     N_para[j].y=(j-num_flag)%Layer3[i]-1;
+    }
+    num_flag=j;
+  }
+}
+printf("num_flag=%d\n",num_flag);
+if(num_flag>N[2])
+{printf("N3 error\n");return -1;}
+N[2]=num_flag-1;
+
+for(i=0;i<Nlines;i++)
+{
+  if(Layer1[i]==4)
+  {
+    for(j=num_flag;j<num_flag+Layer2[i]*Layer3[i];j++)
+    {
+     N_para[j].neuron_numble=j;
+     N_para[j].u=-20;
+     N_para[j].v=-60;
+     Signal[j]=0;
+     N_para[j].type=4;
+     N_para[j].layer=i;
+     N_para[j].x=(j-num_flag)/Layer3[i];
+     N_para[j].y=(j-num_flag)%Layer3[i]-1;
+    }
+    num_flag=j;
+  }
+}
+printf("num_flag=%d\n",num_flag);
+if(num_flag>N[3])
+{printf("N4 error\n");return -1;}
+N[3]=num_flag-1;
+
+for(i=0;i<Nlines;i++)
+{
+  if(Layer1[i]==5)
+  {
+    for(j=num_flag;j<num_flag+Layer2[i]*Layer3[i];j++)
+    {
+     N_para[j].neuron_numble=j;
+     N_para[j].u=-20;
+     N_para[j].v=-65;
+     Signal[j]=0;
+     N_para[j].type=5;
+     N_para[j].layer=i;
+     N_para[j].x=(j-num_flag)/Layer3[i];
+     N_para[j].y=(j-num_flag)%Layer3[i]-1;
+    }
+    num_flag=j;
+  }
+}
+printf("num_flag=%d\n",num_flag);
+if(num_flag>N[4])
+{printf("N5 error\n");return -1;}
+N[4]=num_flag;
+
+for(i=0;i<Nlines;i++)
+{
+  if(Layer1[i]==6)
+  {
+    for(j=num_flag;j<num_flag+Layer2[i]*Layer3[i];j++)
+    {
+     N_para[j].neuron_numble=j;
+     N_para[j].u=-20;
+     N_para[j].v=-56;
+     Signal[j]=0;
+     N_para[j].type=6;
+     N_para[j].layer=i;
+     N_para[j].x=(j-num_flag)/Layer3[i];
+     N_para[j].y=(j-num_flag)%Layer3[i]-1;
+    }
+    num_flag=j;
+  }
+}
+printf("num_flag=%d\n",num_flag);
+if(num_flag>N[5])
+{printf("N6 error\n");return -1;}
+N[5]=num_flag;
