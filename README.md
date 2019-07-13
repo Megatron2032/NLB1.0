@@ -1,7 +1,7 @@
 # NeuronLayerBox <br>
 Computational Neuroscience platform with cuda.<br>
 This platform is mainly for calculating stephen grossberg's model.<br>
-![thalamocortical network](NeuronLayerBox1.1/pic/SMART.bmp)<br>
+![thalamocortical network](NeuronLayerBox1.1/pic/SMART.png)<br>
 ## 1.How to run:<br>
 In NeuronLayerBox file to recompile:<br>
 ```
