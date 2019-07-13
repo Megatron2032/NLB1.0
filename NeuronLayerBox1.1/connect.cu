@@ -31,6 +31,7 @@ int search_index(int *list, int x, int n)
         if(list[i] == x)
             return i;
     printf("search error,not find element\n");
+    printf("x=%d,n=%d\n",x,n);
     return -1;
 }
 
@@ -111,7 +112,11 @@ int analysis_synapse_func(struct syn_loaddata *syn_data,int *Layer_index,int Nli
     {
         if(X_max[search_index(Layer_index,syn_data->Prelayer[i],Nlines)]<=0 || Y_max[search_index(Layer_index,syn_data->Prelayer[i],Nlines)]<=0 || X_max[search_index(Layer_index,syn_data->Postlayer[i],Nlines)]<=0 || Y_max[search_index(Layer_index,syn_data->Postlayer[i],Nlines)]<=0)
         {
-          printf("error:xmax and ymax must >0\n");
+          int x1=search_index(Layer_index,syn_data->Prelayer[i],Nlines);
+          int y1=search_index(Layer_index,syn_data->Prelayer[i],Nlines);
+          int x2=search_index(Layer_index,syn_data->Postlayer[i],Nlines);
+          int y2=search_index(Layer_index,syn_data->Postlayer[i],Nlines);
+          printf("error:xmax and ymax must >0,%d,%d,%d,%d,%d,%d,%d,%d\n",x1,y1,x2,y2,X_max[x1],Y_max[y1],X_max[x2],Y_max[y2]);
           return -1;
         }
         num+=compute_num(Layer_index,Nlines,X_max,Y_max,syn_data,i);

@@ -20,7 +20,7 @@ if __name__ == '__main__':
 	NLB.input(input_src)
 	for i in range(50):
 		NLB.step(5)
-		a=(NLB.output()['6']/max(np.max(NLB.output()['6']),0.0000001))*255
+		a=(NLB.output()['11']/max(np.max(NLB.output()['11']),0.0000001))*255
 		cv2.imshow("1.jpg",a)
 		cv2.waitKey(1)
 	time.sleep(10)

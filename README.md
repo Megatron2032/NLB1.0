@@ -13,7 +13,7 @@ open anthor terminal:python main.py,you will see this:<br>
 this picture show the fmri of layer5 in SMART model<br>
 ![input image](NeuronLayerBox1.1/load_data/input.bmp)<br>
 ![output layer5](NeuronLayerBox1.1/pic/test1.gif)<br>
-Note:"./test" must be first.if there are some issues,you will clean the shared memory or restart your os. <br>
+Note:"./NLB" must be first.if there are some issues,you will clean the shared memory or restart your os. <br>
 
 ## 2.how to use it:<br>
 you can refer main.py<br>
@@ -43,7 +43,7 @@ for i in range(50):
 ```
 NLB.save()
 ```
-it will save model in load_data/SaveData.NLB terminal will print information about model's name.<br>
+it will save model in load_data/SaveData. NLB terminal will print information about model's name.<br>
 
 ### 2.4 exit<br>
 ```

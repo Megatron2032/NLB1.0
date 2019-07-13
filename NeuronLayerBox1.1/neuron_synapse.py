@@ -14,7 +14,7 @@ while(line):
     if line=='':
         break
     line=line.strip().replace(' ','').split('\t')
-    if len(line[0])==6:
+    if len(line[0])>=6:
         if line[1]=='INPUT':
             type=7
         elif line[1]=='RS':
@@ -34,7 +34,7 @@ while(line):
         is_output=0
         if line[2]=="true":
             is_output=1
-        layer.append([int(line[0][-1]),type,int(line[3]),int(line[4]),is_output])
+        layer.append([int(line[0].replace('Layer','')),type,int(line[3]),int(line[4]),is_output])
     line=neuron_file.readline()
 neuron_file.close()
 
