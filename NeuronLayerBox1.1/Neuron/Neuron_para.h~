@@ -1,0 +1,26 @@
+#include "cuda_runtime.h"
+#include <stdio.h>
+//type:RS(1),FS(2),TC(3),TI(4),TRN(5),LTS(6),LS(7)
+
+
+__constant__ float tau=0.2;    //Computation period
+
+
+struct axon{
+int neuron_numble;
+int layer;
+int x;
+int y;
+float v;
+float u;
+char type;
+};
+
+struct OutPutLayer
+{
+  int layer;
+  int addr;
+  int Xmax;
+  int Ymax;
+  char type;
+};

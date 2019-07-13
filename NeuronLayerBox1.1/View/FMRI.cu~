@@ -1,0 +1,35 @@
+#include "cuda_runtime.h"
+#include <stdio.h>
+
+__global__ static void fmri(struct axon *neuro, unsigned char *spike,int *output_image, struct OutPutLayer *outputlayer ,float *output_timeN)
+{
+const int tid = threadIdx.x;
+const int bid = blockIdx.x;
+int number=bid *320 + tid;
+float x;
+float timeN;
+float t1=0.5;
+float t2=2.4;
+float t_peak;
+float gpeak=6.375*5;    //(0=<x<=255)
+float g;
+if(number<(outputlayer->Ymax)*(outputlayer->Xmax))
+{
+  timeN=output_timeN[number];
+  if(spike[number+outputlayer->addr]==1)
+  {
+    timeN=0;
+  }
+  t_peak=(t1*t2*logf(t1/t2))/(t1-t2);
+  g=gpeak*(expf(-0.2*timeN/t1)-expf(-0.2*timeN/t2))/((-t_peak/t1)-(-t_peak/t2));
+  x=output_image[number];
+  //if(x>0){printf("%f\n",x);}
+  x=x+1*(g-x/50);
+  if(x>255){x=255;}
+  if(x<0){x=0;}
+  output_image[number]=(int)x;
+  timeN++;
+  output_timeN[number]=timeN;
+}
+
+}
